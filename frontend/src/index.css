@@ -1,0 +1,48 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-base-100 text-base-content;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+}
+
+@layer components {
+  .card {
+    @apply shadow-lg hover:shadow-xl transition-shadow;
+  }
+
+  .btn {
+    @apply font-semibold;
+  }
+}
+
+ */
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
