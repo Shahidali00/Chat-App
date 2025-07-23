@@ -11,7 +11,7 @@ import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const __dirname = path.resolve();
 
 app.use(express.json({ limit: '10mb' }));
@@ -38,4 +38,13 @@ if (process.env.NODE_ENV === "production") {
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Please stop the other process or use a different port.`);
+    process.exit(1);
+  } else {
+    throw err;
+  }
 });
